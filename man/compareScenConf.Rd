@@ -10,7 +10,7 @@ compareScenConf(
   fileList = NULL,
   remindPath = "/p/projects/rd3mod/github/repos/remindmodel/remind/develop",
   row.names = 1,
-  renamedCols = NULL,
+  renamedCols = TRUE,
   renamedRows = NULL,
   printit = TRUE,
   expanddata = TRUE
@@ -26,7 +26,8 @@ default configuration and find a file for comparison if only one config file is 
 \item{row.names}{column in csv used for row.names. Defaults to 1.
 Use NULL for mapping files which either picks the 'variable' column or uses the first two columns.}
 
-\item{renamedCols}{vector with old and new column names such as c("old1" = "new1", "old2" = "new2"))}
+\item{renamedCols}{vector with old and new column names such as c("old1" = "new1", "old2" = "new2")).
+Use TRUE as vector element to try to guess automatically: cm_switch <-> c_switch}
 
 \item{renamedRows}{vector with old and new row names such as c("old3" = "new3", "old3" = "new4", "old5" = "new5"))
 the "old" name can also remain in the new file, if you generated a variant}

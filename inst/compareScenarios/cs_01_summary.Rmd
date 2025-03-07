@@ -11,10 +11,10 @@ items <- c(
   "Emi|CO2|Industrial Processes",
   "Emi|CO2|Land-Use Change",
   "Emi|CO2|Waste",
+  "Emi|CO2|non-ES CDR",  
   "Emi|GHG|CH4",
   "Emi|GHG|N2O",
-  "Emi|GHG|F-Gases",
-  "Emi|CO2|non-BECCS CDR")
+  "Emi|GHG|F-Gases")
 showAreaAndBarPlots(data, items, tot, scales = "fixed")
 ```
 
@@ -28,7 +28,7 @@ items <- c(
   "Emi|GHG|Energy|Demand|Transport",
   "Emi|GHG|Energy|Demand|Buildings",
   "Emi|GHG|Gross|Energy|Demand|Industry",
-  "Emi|GHG|Energy|Demand|CDR",
+  "Emi|GHG|Gross|Energy|Demand|CDR Sector",
   "Emi|GHG|Industrial Processes",
   "Emi|GHG|Agriculture",
   "Emi|GHG|Land-Use Change",
@@ -38,8 +38,7 @@ items <- c(
   "Emi|CO2|CDR|Materials",
   "Emi|CO2|CDR|DACCS",
   "Emi|CO2|CDR|OAE",
-  "Emi|CO2|CDR|EW",
-  "Emi|CO2|Accounted in Other Sectors via CCU")
+  "Emi|CO2|CDR|EW")
 showAreaAndBarPlots(data, items, tot, scales = "fixed")
 ```
 
@@ -55,12 +54,13 @@ showAreaAndBarPlots(data, paste(items, "pCap"), paste(tot, "pCap"), scales = "fi
 tot <- "Emi|CO2"
 items <- c(
   "Emi|CO2|Land-Use Change",
-  "Emi|CO2|Industrial Processes",
+  "Emi|CO2|Industrial Processes|Industry",
+  "Emi|CO2|Industrial Processes|CDR Sector",
   "Emi|CO2|Gross|Waste",
   "Emi|CO2|Energy|Demand|Transport",
   "Emi|CO2|Gross|Energy|Demand|Industry",
   "Emi|CO2|Energy|Demand|Buildings",
-  "Emi|CO2|Energy|Demand|CDR",
+  "Emi|CO2|Gross|Energy|Demand|CDR Sector",
   "Emi|CO2|Gross|Energy|Supply|Non-electric",
   "Emi|CO2|Gross|Energy|Supply|Electricity",
   "Emi|CO2|CDR|BECCS",
@@ -68,8 +68,7 @@ items <- c(
   "Emi|CO2|CDR|Materials",
   "Emi|CO2|CDR|DACCS",
   "Emi|CO2|CDR|OAE",
-  "Emi|CO2|CDR|EW",
-  "Emi|CO2|Accounted in Other Sectors via CCU")
+  "Emi|CO2|CDR|EW")
 showAreaAndBarPlots(data, items, tot, scales = "fixed")
 ```
 
@@ -91,11 +90,11 @@ items <- c(
   "Emi|CO2|Cumulated|Energy|Demand|Transport",
   "Emi|CO2|Cumulated|Gross|Energy|Demand|Industry",
   "Emi|CO2|Cumulated|Energy|Demand|Buildings",
-  "Emi|CO2|Cumulated|Energy|Demand|CDR",
+  "Emi|CO2|Cumulated|Gross|Energy|Demand|CDR Sector",
   "Emi|CO2|Cumulated|Gross|Energy|Supply|Non-electric",
   "Emi|CO2|Cumulated|Gross|Energy|Supply|Electricity",
   "Emi|CO2|Cumulated|CDR|BECCS",
-  "Emi|CO2|Cumulated|CDR|Industry CCS|Synthetic Fuels",
+  "Emi|CO2|Cumulated|CDR|Synthetic Fuel CCS",
   "Emi|CO2|Cumulated|CDR|Materials",
   "Emi|CO2|Cumulated|CDR|DACCS",
   "Emi|CO2|Cumulated|CDR|OAE",

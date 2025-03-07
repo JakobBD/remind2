@@ -14,3 +14,4 @@
 ^vignettes/.lintr$
 ^Makefile$
 ^.*CITATION.cff$
+pull_request_template.md

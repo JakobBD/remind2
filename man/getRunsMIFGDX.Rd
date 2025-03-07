@@ -3,7 +3,7 @@
 \name{getRunsMIFGDX}
 \alias{getRunsMIFGDX}
 \title{Copy fulldata.gdx and mif files from a suite of runs into one folder. This function creates the folder "./data/" in
-your working directory if such folder does not exist. It will furthermore create a subfolder with the experiment name where the gdx and mif-files 
+your working directory if such folder does not exist. It will furthermore create a subfolder with the experiment name where the gdx and mif-files
 will be copied to. Care: If this subfolder is already existing, old files in this subfolder will be overwritten!}
 \usage{
 getRunsMIFGDX(output.folder, experiment)
@@ -18,7 +18,7 @@ no return, function creates data folder and copies output files into it
 }
 \description{
 Copy fulldata.gdx and mif files from a suite of runs into one folder. This function creates the folder "./data/" in
-your working directory if such folder does not exist. It will furthermore create a subfolder with the experiment name where the gdx and mif-files 
+your working directory if such folder does not exist. It will furthermore create a subfolder with the experiment name where the gdx and mif-files
 will be copied to. Care: If this subfolder is already existing, old files in this subfolder will be overwritten!
 }
 \examples{

@@ -424,12 +424,12 @@ reportTechnology <- function(gdx, output = NULL, regionSubsetList = NULL, t = c(
   # OAE reporting: add info on quicklime and slacked lime needed for OAE ----
   tmp3 <- NULL
   te_oae33 <- readGDX(gdx, "te_oae33", react = "silent")
-  
+
   if (!is.null(te_oae33)) {
    ## read data and calculate total across technologies
   vm_emiCdrTeDetail_oae <- readGDX(gdx, "vm_emiCdrTeDetail", restore_zeros = FALSE, field = "l", format = "first_found")[, t, te_oae33] # [Gt C ocean uptake]
   vm_emiCdrTeDetail_oae <- dimSums(vm_emiCdrTeDetail_oae, dim = 3)     # GtC ocean uptake summed over the two oae technologies
-  
+
   s33_OAE_efficiency <- readGDX(gdx, "s33_OAE_efficiency") # tC / tCaO
 
   tmp3 <- mbind(

@@ -25,7 +25,7 @@
 #' @importFrom dplyr %>% case_when distinct filter inner_join tibble left_join rename
 #' @importFrom gdx readGDX
 #' @importFrom magclass mbind getYears getRegions setNames dimExists new.magpie
-#' lowpass complete_magpie getItems<- getNames unitsplit
+#' lowpass complete_magpie getItems<- getNames unitsplit unitjoin
 #' @importFrom quitte df.2.named.vector getColValues
 #' @importFrom readr read_csv
 #' @importFrom madrat toolAggregate
@@ -275,7 +275,7 @@ reportPrices <- function(gdx, output = NULL, regionSubsetList = NULL,
                         "Price|Primary Energy|Biomass|Modern (US$2017/GJ)"),
                setNames(mselect(pm_PEPrice, all_enty = "pebios") * tdptwyr2dpgj,
                         "Price|Primary Energy|Biomass|1st Generation|Sugar and Starch (US$2017/GJ)"),
-               setNames(mselect(pm_PEPrice, all_enty = "pebios") * tdptwyr2dpgj,
+               setNames(mselect(pm_PEPrice, all_enty = "pebioil") * tdptwyr2dpgj,
                         "Price|Primary Energy|Biomass|1st Generation|Oil-based (US$2017/GJ)")
   )
 
@@ -1086,7 +1086,7 @@ reportPrices <- function(gdx, output = NULL, regionSubsetList = NULL,
 .addSubvariable <- function(int2ext, subvar) {
   split <- unitsplit(names(int2ext))
   for (sv in subvar) {
-    int2ext <- c(int2ext, stats::setNames(int2ext, paste0(split$variable, sv, " (", split$unit, ")")))
+    int2ext <- c(int2ext, stats::setNames(int2ext, unitjoin(paste0(split$variable, sv), split$unit)))
   }
   return(int2ext)
 }

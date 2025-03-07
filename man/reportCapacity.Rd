@@ -41,5 +41,5 @@ reportCapacity(gdx)
 \code{\link{convGDX2MIF}}
 }
 \author{
-Lavinia Baumstark, Christoph Bertram
+Lavinia Baumstark, Christoph Bertram, Fabrice Lecuyer
 }

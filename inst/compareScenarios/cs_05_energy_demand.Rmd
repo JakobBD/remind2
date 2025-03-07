@@ -109,6 +109,11 @@ showAreaAndBarPlots(data, items2, tot, orderVars = "user", scales = "fixed")
 ```
 
 ### FE Buildings Line Plots
+```{r Buildings}
+showLinePlots(data, "FE|Buildings",
+              histModelsExclude = paste("IEA ETP", c("2DS", "B2DS", "RTS")))
+```
+
 #### Electricity
 ```{r Electricity}
 showLinePlots(data, "FE|Buildings|Electricity")
@@ -127,6 +132,8 @@ showLinePlots(data, "FE|Buildings|Gases")
 #### Solids
 ```{r Solids}
 showLinePlots(data, "FE|Buildings|Solids")
+showLinePlots(data, "FE|Buildings|Solids|Biomass")
+showLinePlots(data, "FE|Buildings|Solids|Fossil")
 ```
 
 #### Hydrogen
@@ -191,7 +198,11 @@ showAreaAndBarPlots(data, items, tot, orderVars = "user", fill = TRUE)
 showAreaAndBarPlots(data, items2, tot, orderVars = "user", scales = "fixed")
 ```
 
-#### FE Industry Line Plots
+### FE Industry Line Plots
+```{r Industry}
+showLinePlots(data, "FE|Industry")
+```
+
 #### Electricity
 ```{r Electricity}
 showLinePlots(data, "FE|Industry|Electricity")
@@ -532,10 +543,11 @@ data %>%
       period = range(.$period),
       variable = var1,
       value = 1.8)) %>% # GJ/t. # nolint
-  showLinePlots(var1)
+  showLinePlots(var1, scales = 'fixed')
 
 # Chemicals ----
-showLinePlots(data, 'FE|Industry|Specific Energy Consumption|Chemicals')
+showLinePlots(data, 'FE|Industry|Specific Energy Consumption|Chemicals',
+              scales = 'fixed')
 
 # Primary steel ----
 var2 <- "FE|Industry|Specific Energy Consumption|Primary Steel"
@@ -549,7 +561,7 @@ data %>%
       period = range(.$period),
       variable = var2,
       value = 8.2)) %>% # GJ/t. # nolint
-  showLinePlots(var2)
+  showLinePlots(var2, scales = 'fixed')
 
 # Secondary steel ----
 var3 <- "FE|Industry|Specific Energy Consumption|Secondary Steel"
@@ -563,10 +575,11 @@ data %>%
       period = range(.$period),
       variable = var3,
       value = 1.3)) %>% # GJ/t. # nolint
-  showLinePlots(var3)
+  showLinePlots(var3, scales = 'fixed')
 
 # Other Industry ----
-showLinePlots(data, 'FE|Industry|Specific Energy Consumption|Other Industry')
+showLinePlots(data, 'FE|Industry|Specific Energy Consumption|Other Industry',
+              scales = 'fixed')
 ```
 
 
@@ -658,6 +671,9 @@ showAreaAndBarPlots(data, items_bioliq, tot_bioliq, orderVars = "user", scales =
 ```
 
 ### FE Transport w/ Bunkers - Line Plots
+```{r Transport}
+showLinePlots(data, "FE|Transport")
+```
 
 #### Electricity
 ```{r Electricity}

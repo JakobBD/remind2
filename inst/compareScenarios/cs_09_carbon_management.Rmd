@@ -6,34 +6,58 @@
 showLinePlots(data, "Carbon Management|Carbon Capture")
 ```
 
-### Capture by type - Bar
-```{r Capture by type - Bar}
+### Capture by sector - Bar
+```{r Capture by sector - Bar}
 showAreaAndBarPlotsPlus(data, "Carbon Management|Carbon Capture", scales = "fixed")
+```
+
+### Capture by CO2 origin - Bar
+```{r Capture by CO2 origin - Bar}
+showAreaAndBarPlots(
+  data = data,
+  vars = rev(c('Carbon Management|Carbon Capture|Biomass',
+               'Carbon Management|Carbon Capture|Fossil',
+               'Carbon Management|Carbon Capture|Synfuel',
+               'Carbon Management|Carbon Capture|Industrial Processes',
+               'Carbon Management|Carbon Capture|DAC')),
+  scales = 'fixed',
+  orderVars = 'user')
 ```
 
 ### Bio PE2SE Capture by carrier - Bar
 ```{r Bio PE2SE Capture by carrier - Bar}
-showAreaAndBarPlotsPlus(data, "Carbon Management|Carbon Capture|Biomass|Pe2Se", scales = "fixed")
+showAreaAndBarPlotsPlus(data, "Carbon Management|Carbon Capture|Energy|Pe2Se|Biomass", scales = "fixed")
 ```
 
 ### Fossil PE2SE Capture by carrier - Bar
 ```{r Fossil PE2SE Capture by carrier - Bar}
-showAreaAndBarPlotsPlus(data, "Carbon Management|Carbon Capture|Fossil|Pe2Se", scales = "fixed")
+showAreaAndBarPlotsPlus(data, "Carbon Management|Carbon Capture|Energy|Pe2Se|Fossil", scales = "fixed")
 ```
 
 ### Industry Energy Capture by PE - Bar
 ```{r Industry Energy Capture by PE - Bar}
-showAreaAndBarPlotsPlus(data, "Carbon Management|Carbon Capture|Industry Energy", scales = "fixed")
+showAreaAndBarPlotsPlus(data, "Carbon Management|Carbon Capture|Energy|Industry", scales = "fixed")
 ```
 
-### Industry Process Capture by sector - Bar
-```{r Industry Process Capture by sector - Bar}
+### Carbon Capture from Industry Sector - Bar
+```{r Carbon Capture from Industry Sector - Bar}
 showAreaAndBarPlots(
   data = data,
-  vars = rev(c('Carbon Management|Carbon Capture|Industry Energy|Cement',
-               'Carbon Management|Carbon Capture|Industry Process|Cement',
-               'Carbon Management|Carbon Capture|Industry Energy|Chemicals',
-               'Carbon Management|Carbon Capture|Industry Energy|Steel')),
+  vars = rev(c('Carbon Management|Carbon Capture|Energy|Industry|Cement',
+               'Carbon Management|Carbon Capture|Industrial Processes|Cement',
+               'Carbon Management|Carbon Capture|Energy|Industry|Chemicals',
+               'Carbon Management|Carbon Capture|Energy|Industry|Steel')),
+  scales = 'fixed',
+  orderVars = 'user')
+```
+
+### Carbon Capture from CDR Sector - Bar
+```{r Carbon Capture from CDR Sector - Bar}
+showAreaAndBarPlots(
+  data = data,
+  vars = rev(c('Carbon Management|Carbon Capture|Energy|CDR Sector',
+               'Carbon Management|Carbon Capture|Industrial Processes|CDR Sector|OAE',
+               'Carbon Management|Carbon Capture|DAC')),
   scales = 'fixed',
   orderVars = 'user')
 ```
@@ -65,7 +89,7 @@ showAreaAndBarPlotsPlus(data, "Carbon Management|Storage", scales = "fixed")
 
 ### Storage from Industry Energy by PE - Bar
 ```{r Storage from Industry Energy by PE - Bar}
-showAreaAndBarPlotsPlus(data, "Carbon Management|Storage|Industry Energy", scales = "fixed")
+showAreaAndBarPlotsPlus(data, "Carbon Management|Storage|Energy|Industry", scales = "fixed")
 ```
 
 ### Share of storage potential used

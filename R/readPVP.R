@@ -1,8 +1,8 @@
 #' Read PVP ("Present value price") from GDX file
-#' 
+#'
 #' Read PVP data of a certain commodity from a GDX file into a magpie object.
-#' 
-#' 
+#'
+#'
 #' @param gdx a GDX list as created by readGDX, or the file name of a gdx
 #' file(file name is recommended as this speeds up the code)
 #' @param level spartiel resolution "glo" = global or "reg" = regional
@@ -11,12 +11,12 @@
 #' @return PVP data as MAgPIE object
 #' @author Jonas Hoersch
 #' @examples
-#' 
+#'
 #'   \dontrun{
 #'     coal <- readPVP(gdx, enty = "pecoal")
 #'     gas <- readPVP(gdx, enty = "pegas")
 #'   }
-#' 
+#'
 #' @export
 #' @importFrom gdx readGDX
 #' @importFrom magclass new.magpie getYears

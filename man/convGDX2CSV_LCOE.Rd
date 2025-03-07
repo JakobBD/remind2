@@ -26,7 +26,9 @@ Read in all information from GDX file, calculate the LCOE for pe2se technologies
 the LCOE .csv reporting
 }
 \examples{
-\dontrun{convGDX2CSV_LCOE(gdx,file="REMIND_LCOE_reporting.csv",scenario="default")}
+\dontrun{
+convGDX2CSV_LCOE(gdx, file = "REMIND_LCOE_reporting.csv", scenario = "default")
+}
 
 }
 \author{

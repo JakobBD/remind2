@@ -177,7 +177,7 @@ compareScenarios(
 ```
 
 13. Commit your changes. In the commit message, you may use the shorthand `cs2` to indicate that you made a change to compareScenarios, e.g., `cs2: added plot of My|Variable`.
-14. Make sure you pulled all recent changes to remind2. Then, call `lucode2::buildLibrary()` to check the code and increase the version number of the package. Commit again with the commit message `` `lucode2::buildLibrary()` ``. Push your commits to github.
+14. Make sure you pulled all recent changes to remind2. Then, call `make build` to check the code and increase the version number of the package. Commit again and push your commits to github.
 15. Create a pull request of your branch to the `master` branch of the `pik-piam/remind2` repository.
 
 # Preprocessing

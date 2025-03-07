@@ -88,6 +88,7 @@ items <- c(
   "Emi|CO2|Energy|Demand|Transport",
   "Emi|CO2|Energy|Demand|Industry",
   "Emi|CO2|Energy|Demand|Buildings",
+  "Emi|CO2|Energy|Demand|CDR Sector",
   "Emi|CO2|Energy|Supply|Non-electric",
   "Emi|CO2|Energy|Supply|Electricity w/ couple prod",
   "Emi|CO2|CDR|DACCS",
@@ -271,8 +272,9 @@ showLinePlots(data, "Emi|CO2|Industrial Processes")
 ```{r CO2 Process Emissions by Sector}
 tot <- c("Emi|CO2|Industrial Processes")
 items <- c(
-      "Emi|CO2|Industrial Processes|Chemicals",
-      "Emi|CO2|Industrial Processes|Cement"
+      "Emi|CO2|Industrial Processes|Industry|Chemicals",
+      "Emi|CO2|Industrial Processes|Industry|Cement",
+      "Emi|CO2|Industrial Processes|CDR Sector|OAE"
       )
 showAreaAndBarPlots(data, items, tot, scales = "fixed")
 ```
@@ -282,7 +284,7 @@ showAreaAndBarPlots(data, items, tot, scales = "fixed")
 ```{r}
 showLinePlots(
   data, 
-  vars = "Emi|CO2|Industrial Processes|Cement", 
+  vars = "Emi|CO2|Industrial Processes|Industry|Cement", 
   histVars = c("Emi|CO2|Industrial Processes|Cement", "Emi|CO2|Industrial Processes|Minerals")
 )
 ```
@@ -291,13 +293,13 @@ showLinePlots(
 #### Process Emissions Chemicals
 
 ```{r}
-showLinePlots(data, "Emi|CO2|Industrial Processes|Chemicals")
+showLinePlots(data, "Emi|CO2|Industrial Processes|Industry|Chemicals")
 ```
 
 #### Process Emissions Metals
 
 ```{r}
-showLinePlots(data, "Emi|CO2|Industrial Processes|Metals")
+showLinePlots(data, "Emi|CO2|Industrial Processes|Industry|Metals")
 ```
 
 ### Land-Use Change
@@ -320,10 +322,10 @@ showLinePlots(
 
 
 
-### non-BECCS CDR
+### novel CDR outside the energy system
 
-```{r CO2 non-BECCS CDR}
-showLinePlots(data, "Emi|CO2|non-BECCS CDR")
+```{r novel CDR outside the energy system}
+showLinePlots(data, "Emi|CO2|non-ES CDR")
 ```
 
 ### CDR
@@ -350,7 +352,7 @@ tot <- "Emi|CO2|CDR"
 items <- c(
   "Emi|CO2|CDR|Land-Use Change",
   "Emi|CO2|CDR|BECCS|Pe2Se",
-  "Emi|CO2|CDR|BECCS|Industry",
+  "Emi|CO2|CDR|BECCS|Demand Side",
   "Emi|CO2|CDR|Synthetic Fuels CCS",
   "Emi|CO2|CDR|Materials",
   "Emi|CO2|CDR|DACCS",
@@ -360,14 +362,29 @@ items <- c(
 showAreaAndBarPlots(data, items, tot, scales = "fixed")
 ```
 
+#### Net CDR
+```{r Net novel CDR}
+showAreaAndBarPlots(
+  data = data,
+  vars = rev(c('Emi|CO2|CDR|OAE',
+               'Emi|CO2|CDR|EW',
+               'Emi|CO2|CDR|DACCS',
+               'Emi|CO2|CDR|BECCS|Demand Side|CDR Sector',
+               'Emi|CO2|CDR|Synthetic Fuel CCS|CDR Sector',
+               'Emi|CO2|Energy|Demand|CDR Sector',
+               'Emi|CO2|Industrial Processes|CDR Sector')),
+  scales = 'fixed',
+  orderVars = 'user')
+```
+
 #### Ocean CDR
 ```{r Ocean CDR}
-tot <- "Emi|CO2|CDR|net OAE"
+tot <- "Emi|CO2|CDR|Net OAE"
 items <- c(
-  "Emi|CO2|CDR|net OAE|Ocean Uptake|traditional calciner",
-  "Emi|CO2|CDR|net OAE|Ocean Uptake|electric calciner",
-  "Emi|CO2|CDR|net OAE|Released emissions",
-  "Emi|CO2|CDR|net OAE|Unavoidable emissions"
+  "Emi|CO2|CDR|Net OAE|Ocean Uptake|Traditional Calciner",
+  "Emi|CO2|CDR|Net OAE|Ocean Uptake|Electric Calciner",
+  "Emi|CO2|CDR|Net OAE|Calcination Emissions|Unavoidable",
+  "Emi|CO2|CDR|Net OAE|Calcination Emissions|Rereleased"
 )
 showAreaAndBarPlots(data, items, tot, scales = "fixed")
 ```
@@ -421,8 +438,8 @@ items <- c(
   "Emi|CO2|Cumulated|Gross|Waste",
   "Emi|CO2|Cumulated|Land-Use Change",
   "Emi|CO2|Cumulated|CDR|BECCS|Pe2Se",
-  "Emi|CO2|Cumulated|CDR|BECCS|Industry",
-  "Emi|CO2|Cumulated|CDR|Industry CCS|Synthetic Fuels",
+  "Emi|CO2|Cumulated|CDR|BECCS|Demand Side",
+  "Emi|CO2|Cumulated|CDR|Synthetic Fuel CCS",
   "Emi|CO2|Cumulated|CDR|Materials",
   "Emi|CO2|Cumulated|CDR|DACCS",
   "Emi|CO2|Cumulated|CDR|OAE",
@@ -442,7 +459,7 @@ items <- c(
   "Emi|GHG|ETS|Transport",
   "Emi|GHG|ETS|Extraction",
   "Emi|GHG|ETS|Waste",
-  "Emi|GHG|ETS|non-BECCS CDR")
+  "Emi|GHG|ETS|non-ES CDR")
 showAreaAndBarPlots(data, items, tot, scales = "fixed")
 ```
 

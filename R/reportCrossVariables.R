@@ -187,7 +187,7 @@ reportCrossVariables <- function(gdx, output = NULL, regionSubsetList = NULL,
       "Welfare|per capita|Real and undiscounted|Yearly (arbitrary unit/yr)"),
 
     setNames(
-        output[,,"Emi|CO2|Industrial Processes|Cement (Mt CO2/yr)"]
+        output[,,"Emi|CO2|Industrial Processes|Industry|Cement (Mt CO2/yr)"]
       / output[,,"Production|Industry|Cement (Mt/yr)"],
       "Carbon Intensity|Production|Cement|+|Industrial Processes (Mt CO2/Mt)"),
 

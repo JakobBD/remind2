@@ -185,7 +185,7 @@ reportLCOE <- function(gdx, output.type = "both") {
 
     # dac FE demand
     v33_FEdemand <- readGDX(gdx, name = "v33_FEdemand", field = "l", restore_zeros = FALSE, format = "first_found")[, ttot_from2005, teCDR]
-    DAC_ccsdemand <- readGDX(gdx, name = "v33_co2emi_non_atm_gas", field = "l", restore_zeros = FALSE, format = "first_found")[, ttot_from2005, "dac"]
+    DAC_ccsdemand <- readGDX(gdx, name = c("vm_co2emi_cdrFE_beforeCapture","v33_co2emi_non_atm_gas"), field = "l", restore_zeros = FALSE, format = "first_found")[, ttot_from2005, "dac"]
     pm_FEPrice <- readGDX(gdx, "pm_FEPrice")[, ttot_from2005, "indst.ETS"]
     fe2cdr <- readGDX(gdx, name = "fe2cdr")
     if (!is.null(fe2cdr)) {

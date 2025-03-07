@@ -232,10 +232,6 @@ reportTax <- function(gdx,output=NULL,regionSubsetList=NULL,t=c(seq(2005,2060,5)
   p21_taxrevBio0 <- readGDX(gdx, name=c("p21_taxrevBio0"), format= "first_found")[,t,]*1000
   out <- mbind(out, setNames(p21_taxrevBio0,"Net Taxes|Bioenergy (billion US$2017/yr)"))
 
-  # implicit tax on energy efficient capital
-  p21_implicitDiscRate0 <- readGDX(gdx, name=c("p21_implicitDiscRate0"), format= "first_found")[,t,]*1000
-  out <- mbind(out, setNames(p21_implicitDiscRate0,"Net Taxes|Implicit efficiency target (billion US$2017/yr)"))
-
   # co2 emission taxes per emission market
   p21_taxemiMkt0 <- readGDX(gdx, name=c("p21_taxemiMkt0"), format= "first_found")[,t,]*1000
   out <- mbind(out,

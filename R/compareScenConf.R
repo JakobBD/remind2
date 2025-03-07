@@ -8,7 +8,8 @@
 #'        default configuration and find a file for comparison if only one config file is supplied in fileList
 #' @param row.names column in csv used for row.names. Defaults to 1.
 #'        Use NULL for mapping files which either picks the 'variable' column or uses the first two columns.
-#' @param renamedCols vector with old and new column names such as c("old1" = "new1", "old2" = "new2"))
+#' @param renamedCols vector with old and new column names such as c("old1" = "new1", "old2" = "new2")).
+#'        Use TRUE as vector element to try to guess automatically: cm_switch <-> c_switch
 #' @param renamedRows vector with old and new row names such as c("old3" = "new3", "old3" = "new4", "old5" = "new5"))
 #'        the "old" name can also remain in the new file, if you generated a variant
 #' @param printit boolean switch (default: TRUE) whether function prints its output
@@ -27,7 +28,7 @@
 #' @importFrom gms getLine
 #' @export
 compareScenConf <- function(fileList = NULL, remindPath = "/p/projects/rd3mod/github/repos/remindmodel/remind/develop",
-                            row.names = 1, renamedCols = NULL, renamedRows = NULL, printit = TRUE, expanddata = TRUE) {
+                            row.names = 1, renamedCols = TRUE, renamedRows = NULL, printit = TRUE, expanddata = TRUE) {
   m <- c()
   folder <- getwd()
   # if one file supplied, compare to the same file in remindPath
@@ -93,9 +94,13 @@ compareScenConf <- function(fileList = NULL, remindPath = "/p/projects/rd3mod/gi
   }
 
   # rename columns and rows in old file to new names after some checks
+  if (TRUE %in% renamedCols) {
+    renamedCols <- c(renamedCols[! renamedCols %in% TRUE], findRenamedCols(settings1, settings2))
+  }
   allwarnings <- checkRowsCols(settings1, settings2, renamedCols, renamedRows)
-  for (colname in intersect(names(settings1), names(renamedCols)))
+  for (colname in intersect(names(settings1), names(renamedCols))) {
     names(settings1)[names(settings1) == colname] <- renamedCols[colname]
+  }
 
   # print comparison
   scenarios <- unique(c(rownames(settings2), rownames(settings1)))
@@ -175,4 +180,16 @@ checkRowsCols <- function(settings1, settings2, renamedCols, renamedRows) {
       "New row name(s) also present in first file: ", setdiff(renamedRows, rownames(settings1))))
   }
   return(allwarnings)
+}
+
+findRenamedCols <- function(settings1, settings2) {
+  only1 <- setdiff(names(settings1), names(settings2))
+  only2 <- setdiff(names(settings2), names(settings1))
+  shorten <- function(i) gsub("^cm_", "c_", i)
+  shortname <- intersect(shorten(only1), shorten(only2))
+  renamedCols <- NULL
+  for (s in shortname) {
+    renamedCols <- c(renamedCols, setNames(only2[shorten(only2) == s], only1[shorten(only1) == s]))
+  }
+  return(renamedCols)
 }

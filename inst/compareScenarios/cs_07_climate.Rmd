@@ -15,7 +15,8 @@ magiccvar <- c("Effective Radiative Forcing|Basket|Anthropogenic",
 for (mv in magiccvar) {
   fullvar <- paste0("MAGICC7 AR6|", mv, "|50.0th Percentile")
   if (fullvar %in% levels(data$variable)) {
-    showLinePlots(data, fullvar)
+    showLinePlots(data, fullvar) # plots 50th percentile
+    showLinePlots(data, paste0("MAGICC7 AR6|", mv, "|67.0th Percentile"))
     print(plotPercentiles(data, variables = paste0("MAGICC7 AR6|", mv)))
     cat("\n\n")
   }

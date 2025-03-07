@@ -16,18 +16,17 @@ Emi|GHG;Emi|GHG|Gross|Energy|Supply|Non-electric;1
 Emi|GHG;Emi|GHG|Energy|Demand|+|Buildings;1
 Emi|GHG;Emi|GHG|Gross|Energy|Demand|+|Industry;1
 Emi|GHG;Emi|GHG|Energy|Demand|+|Transport;1
-Emi|GHG;Emi|GHG|Energy|Demand|+|CDR;1
+Emi|GHG;Emi|GHG|Gross|Energy|Demand|+|CDR Sector;1
 Emi|GHG;Emi|GHG|+++|Industrial Processes;1
 Emi|GHG;Emi|GHG|Gross|Waste;1
 Emi|GHG;Emi|GHG|+++|Agriculture;1
 Emi|GHG;Emi|GHG|+++|Land-Use Change;1
-Emi|GHG;Emi|CO2|CDR|BECCS;1
-Emi|GHG;Emi|CO2|CDR|DACCS;1
-Emi|GHG;Emi|CO2|CDR|EW;1
-Emi|GHG;Emi|CO2|CDR|OAE;1
-Emi|GHG;Emi|CO2|CDR|Materials;1
-Emi|GHG;Emi|CO2|CDR|Synthetic Fuels CCS;1
-Emi|GHG;Emi|CO2|Accounted in Other Sectors via CCU;1
+Emi|GHG;Emi|CO2|CDR|+|BECCS;1
+Emi|GHG;Emi|CO2|CDR|+|DACCS;1
+Emi|GHG;Emi|CO2|CDR|+|EW;1
+Emi|GHG;Emi|CO2|CDR|+|OAE;1
+Emi|GHG;Emi|CO2|CDR|+|Materials;1
+Emi|GHG;Emi|CO2|CDR|+|Synthetic Fuels CCS;1
 ;;
 # total CO2 emissions by sectors with separation into gross and negative emissions;;
 Emi|CO2;Emi|CO2|Gross|Energy|Supply|+|Electricity;1
@@ -35,17 +34,16 @@ Emi|CO2;Emi|CO2|Gross|Energy|Supply|Non-electric;1
 Emi|CO2;Emi|CO2|Energy|Demand|+|Transport;1
 Emi|CO2;Emi|CO2|Gross|Energy|Demand|+|Industry;1
 Emi|CO2;Emi|CO2|Energy|Demand|+|Buildings;1
-Emi|CO2;Emi|CO2|Energy|Demand|+|CDR;1
+Emi|CO2;Emi|CO2|Gross|Energy|Demand|+|CDR Sector;1
 Emi|CO2;Emi|CO2|Gross|Waste;1
 Emi|CO2;Emi|CO2|+|Land-Use Change;1
 Emi|CO2;Emi|CO2|+|Industrial Processes;1
-Emi|CO2;Emi|CO2|CDR|BECCS;1
-Emi|CO2;Emi|CO2|CDR|DACCS;1
-Emi|CO2;Emi|CO2|CDR|EW;1
-Emi|CO2;Emi|CO2|CDR|OAE;1
-Emi|CO2;Emi|CO2|CDR|Materials;1
-Emi|CO2;Emi|CO2|CDR|Synthetic Fuels CCS;1
-Emi|CO2;Emi|CO2|Accounted in Other Sectors via CCU;1
+Emi|CO2;Emi|CO2|CDR|+|BECCS;1
+Emi|CO2;Emi|CO2|CDR|+|DACCS;1
+Emi|CO2;Emi|CO2|CDR|+|EW;1
+Emi|CO2;Emi|CO2|CDR|+|OAE;1
+Emi|CO2;Emi|CO2|CDR|+|Materials;1
+Emi|CO2;Emi|CO2|CDR|+|Synthetic Fuels CCS;1
 ;;
 # total GHG emissions by CO2 sectors and non-CO2 gases;;
 Emi|GHG 1;Emi|CO2|+|Energy;1
@@ -55,7 +53,7 @@ Emi|GHG 1;Emi|CO2|+|Waste;1
 Emi|GHG 1;Emi|GHG|+|CH4;1
 Emi|GHG 1;Emi|GHG|+|N2O;1
 Emi|GHG 1;Emi|GHG|+|F-Gases;1
-Emi|GHG 1;Emi|CO2|+|non-BECCS CDR;1
+Emi|GHG 1;Emi|CO2|+|non-ES CDR;1
 ;;
 # cumulated total CO2 emissions by sectors with separation into gross and negative emissions;;
 Emi|CO2|Cumulated;Emi|CO2|Cumulated|Land-Use Change;1
@@ -63,27 +61,26 @@ Emi|CO2|Cumulated;Emi|CO2|Cumulated|Industrial Processes;1
 Emi|CO2|Cumulated;Emi|CO2|Cumulated|Energy|Demand|Transport;1
 Emi|CO2|Cumulated;Emi|CO2|Cumulated|Gross|Energy|Demand|Industry;1
 Emi|CO2|Cumulated;Emi|CO2|Cumulated|Energy|Demand|Buildings;1
-Emi|CO2|Cumulated;Emi|CO2|Cumulated|Energy|Demand|CDR;1
+Emi|CO2|Cumulated;Emi|CO2|Cumulated|Gross|Energy|Demand|CDR Sector;1
 Emi|CO2|Cumulated;Emi|CO2|Cumulated|Gross|Energy|Supply|Non-electric;1
 Emi|CO2|Cumulated;Emi|CO2|Cumulated|Gross|Energy|Supply|Electricity;1
 Emi|CO2|Cumulated;Emi|CO2|Cumulated|Gross|Waste;1
 Emi|CO2|Cumulated;Emi|CO2|Cumulated|CDR|BECCS;1
-Emi|CO2|Cumulated;Emi|CO2|Cumulated|CDR|Industry CCS|Synthetic Fuels;1
+Emi|CO2|Cumulated;Emi|CO2|Cumulated|CDR|Synthetic Fuels CCS;1
 Emi|CO2|Cumulated;Emi|CO2|Cumulated|CDR|DACCS;1
 Emi|CO2|Cumulated;Emi|CO2|Cumulated|CDR|EW;1
 Emi|CO2|Cumulated;Emi|CO2|Cumulated|CDR|Materials;1
 Emi|CO2|Cumulated;Emi|CO2|Cumulated|CDR|OAE;1
-Emi|CO2|Cumulated;Emi|CO2|Cumulated|Accounted in Other Sectors via CCU;1
 ;;
 # total CDR;;
-Emi|CO2|CDR;Emi|CO2|CDR|Land-Use Change;1
-Emi|CO2|CDR;Emi|CO2|CDR|BECCS|Pe2Se;1
-Emi|CO2|CDR;Emi|CO2|CDR|BECCS|Industry;1
-Emi|CO2|CDR;Emi|CO2|CDR|Synthetic Fuels CCS;1
-Emi|CO2|CDR;Emi|CO2|CDR|DACCS;1
-Emi|CO2|CDR;Emi|CO2|CDR|EW;1
-Emi|CO2|CDR;Emi|CO2|CDR|Materials;1
-Emi|CO2|CDR;Emi|CO2|CDR|OAE;1
+Emi|CO2|CDR;Emi|CO2|CDR|+|Land-Use Change;1
+Emi|CO2|CDR;Emi|CO2|CDR|BECCS|+|Pe2Se;1
+Emi|CO2|CDR;Emi|CO2|CDR|BECCS|+|Demand Side;1
+Emi|CO2|CDR;Emi|CO2|CDR|+|Synthetic Fuels CCS;1
+Emi|CO2|CDR;Emi|CO2|CDR|+|DACCS;1
+Emi|CO2|CDR;Emi|CO2|CDR|+|EW;1
+Emi|CO2|CDR;Emi|CO2|CDR|+|Materials;1
+Emi|CO2|CDR;Emi|CO2|CDR|+|OAE;1
 ;;
 # check balance of SE|Electricity electricity generation with the electricity demand variables by sector;;
 SE|Electricity;SE|Input|Electricity|Hydrogen|Synthetic Fuels|+|Liquids;1

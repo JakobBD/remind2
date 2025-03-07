@@ -1153,6 +1153,11 @@ reportEmiLegacy <- function(gdx, output = NULL, regionSubsetList = NULL,
                 setNames(dimSums(EmiProcess_Feedstocks, dim = 3)*GtC_2_MtCO2,
                          "Emi|CO2|Industrial Processes|+|Chemicals (Mt CO2/yr)")
     )
+    # add renamed reportEmi.R variables for reportCrossVariables.R
+    out <- mbind(out,
+               setNames(out[ , ,"Emi|CO2|Industrial Processes|+|Cement (Mt CO2/yr)"],
+               "Emi|CO2|Industrial Processes|Industry|+|Cement (Mt CO2/yr)")
+                 )
 
     out <- mbind(out,
                # land-use change CO2

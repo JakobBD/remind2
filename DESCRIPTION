@@ -1,14 +1,15 @@
 Type: Package
 Package: remind2
 Title: The REMIND R package (2nd generation)
-Version: 1.164.3
-Date: 2025-02-10
+Version: 1.169.2
+Date: 2025-03-07
 Authors@R: c(
     person("Renato", "Rodrigues", , "renato.rodrigues@pik-potsdam.de", role = c("aut", "cre")),
     person("Lavinia", "Baumstark", role = "aut"),
     person("Falk", "Benke", role = "aut"),
     person("Jan Philipp", "Dietrich", role = "aut"),
     person("Alois", "Dirnaichner", role = "aut"),
+    person("Tabea", "Dorndorf", role = "aut"),
     person("Jakob", "Duerrwaechter", role = "aut"),
     person("Pascal", "Führlich", role = "aut"),
     person("Anastasis", "Giannousakis", role = "aut"),
@@ -42,7 +43,7 @@ Description: Contains the REMIND-specific routines for data and model
 License: LGPL-3
 URL: https://github.com/pik-piam/remind2
 Depends:
-    magclass (>= 6.16.1)
+    magclass (>= 6.17.2)
 Imports:
     abind,
     assertr,
@@ -58,7 +59,7 @@ Imports:
     madrat (>= 3.13.0),
     mip (>= 0.149.2),
     openxlsx,
-    piamInterfaces (>= 0.17.11),
+    piamInterfaces (>= 0.33.0),
     piamPlotComparison (>= 0.0.10),
     piamutils,
     plotly (>= 4.10.4),
